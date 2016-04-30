@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        
+        <title>Inset Inventory</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/> 
+        <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="angular.min.js"></script>
+        <script type="text/javascript" src="ng-data-storage.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+    
+    
+    </head>
+    <body>
+        <figure>
+        
+            <img src="mazda.png" alt="Mazda Logo"/>
+        </figure>
+        <div class="container" ng-controller="MyCtrl">
+            
+                        
+         <ul>
+             <li ng-repeat="car in inventoryFactory.cars()">{{car}}<br />
+            
+             </li>
+        </ul>
+            <h1 id="title">Create Inventory</h1>
+            <div id="menu">
+                <form id="request">
+                    <label>Maker</label>
+                    <input ng-model="newCar.maker" placeholder="Maker" required>
+                    <label>Model</label>
+                    <input ng-model="newCar.model" placeholder="Model" required>
+                    <label>Year</label>
+                    <input ng-model="newCar.year" placeholder="Year" required>
+                    <label>Color</label>
+                    <input ng-model="newCar.color" placeholder="Color" required>
+                    <label>Engine</label>
+                    <input ng-model="newCar.engine" placeholder="Engine" required>
+                    <label>Cost</label>
+                    <input ng-model="newCar.cost" placeholder="Cost" required>
+                    <label>Retail</label>
+                    <input ng-model="newCar.retail" placeholder="Retail" required>
+                    <label>Vin Number</label>
+                    <input ng-model="newCar.vin" placeholder="#########">
+                    <button id="submit" ng-click="inventoryFactory.addCar(newCar); newCar = {}">Add to Inventory</button>
+                
+                </form>
+
+            </div>
+
+        </div>
+        
+        
+    </body>
+    
+</html>
